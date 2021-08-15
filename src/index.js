@@ -8,10 +8,10 @@ const lakeList = [
   "Naivasha Lake"
 ];
 
-function App(props) {
+function App({lakes}) {
   return(
     <ul>
-      { props.lakes.map(lake => (
+      { lakes.map(lake => (
         <li>{ lake }</li>
       ))}
     </ul>
