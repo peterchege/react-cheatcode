@@ -3,18 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 const lakeList = [
-  "Echo Lake",
-  "Maud Lake",
-  "Naivasha Lake"
+  { id: "1", name: "Echo", trailhead: "Echo"},
+  { id: "2", name: "Velma", trailhead: "Wrights"},
+  { id: "3", name: "Shaggy", trailhead: "Bayview"},
+  { id: "4", name: "Maud", trailhead: "juja"}
 ];
 
 function App({lakes}) {
   return(
-    <ul>
-      { lakes.map(lake => (
-        <li>{ lake }</li>
+    <div className="text-align">
+      { lakes.map(lake =>(
+        <div key={lake.id}>
+          <h2>{lake.name}</h2>
+          <p>Accessedy from : {lake.trailhead}</p>
+        </div>
       ))}
-    </ul>
+    </div>
     
   );
 }
