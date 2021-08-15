@@ -1,34 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake({name}) {
-  return (
-      <div>
-        <h1> Visit {name}!</h1>
-      </div>
-  );
-}
 
-function SkinResort({name}) {
-  return (
-      <div>
-        <h1> Visit {name} Mountain Resort</h1>
-      </div>
-  );
-}
 
-function App(props) {
-  if(props.season === "summer"){
-    return <Lake name="Jenny Lake" />
-  } else if (props.season === "winter"){
-    return <SkinResort name="Jackson Hole"/>
-  }
+function App() {
+ const [status, setStatus] = useState("Open"); 
+  return(
+    <div>
+      <h1>Status:{status}</h1>
+      <button onClick={ () => setStatus("Closed")}>Closed</button>
+      <button onClick={ () => setStatus("Open")}>Open</button>
+      <button onClick={ () => setStatus("Back in 5min")}>Break</button>
+    </div>
+  );
 }
 
 
 ReactDOM.render(
-  <App season="summer"/>,
+  <App />,
   document.getElementById('root')
 );
 
